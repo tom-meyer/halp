@@ -49,3 +49,7 @@
     set modeline
     set t_Co=256
     colorscheme molokai
+
+### Vim motions
+
+![vim motions](https://raw.githubusercontent.com/EspadaV8/vim_shortcut_wallpaper/master/vim-shortcuts-dark_2560x1600.png)
