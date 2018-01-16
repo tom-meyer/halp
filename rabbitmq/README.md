@@ -10,6 +10,6 @@
 
 ### Use rabbitmqadmin
 
-    rabbitmqadmin get queue=test requeue=false # create a queue
+    rabbitmqadmin declare queue name=my-new-queue durable=false # create a queue
     
 More examples: https://www.rabbitmq.com/management-cli.html
