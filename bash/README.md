@@ -15,6 +15,17 @@ Word expansion:
     $ echo !317:* # == echo one two three four five six
     $ echo !317:3-5 # == echo three four five
 
+Word expansion, when token after ! is not a number, is a shorthand for previous:
+
+    $ echo one two three four five six
+    $ echo !* # == echo one two three four five six
+
+    $ echo one two three four five six
+    $ echo !^ # == echo one
+    
+    $ echo one two three four five six
+    $ echo !$ # == echo six
+
 ### Directory name of script
 
     SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
