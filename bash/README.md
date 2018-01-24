@@ -1,3 +1,20 @@
+### History expansion
+
+Whole line expansion:
+
+    $ ls /root/.ssh # say this is item 274 in the history
+    $ sudo !!
+    $ sudo !274
+
+Word expansion:
+
+    $ echo one two three four five six # say this is item 317 in the history
+    $ echo !317:1 # == echo one
+    $ echo !317:6 # == echo six
+    $ echo !317:$ # == echo six
+    $ echo !317:* # == echo one two three four five six
+    $ echo !317:3-5 # == echo three four five
+
 ### Directory name of script
 
     SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
