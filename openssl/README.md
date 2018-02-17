@@ -14,3 +14,8 @@
 
     openssl x509 -in CERT -noout -modulus | md5sum
     openssl rsa -in KEY -noout -modulus | md5sum
+
+### Generate self-signed cert
+
+    openssl req -x509 -newkey rsa:4096 -keyout enc_key.pem -out cert.pem -days 365 # encrypted key is generated
+    openssl rsa -in enc_key.pem -out key.key # optionally, decrypt
