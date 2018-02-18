@@ -34,3 +34,7 @@ Slash on the destination
     rsync -r testing test_backup/ # result: ./test_backup/testing/ (same as with no slashes)
 
 See http://qdosmsq.dunbar-it.co.uk/blog/2013/02/rsync-to-slash-or-not-to-slash/
+
+### Identity file
+
+    rsync -r -e "ssh -i key.pem" user@somehost:mydir/ mydir/
