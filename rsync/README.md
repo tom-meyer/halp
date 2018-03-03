@@ -1,3 +1,7 @@
+### Rsync with sudo and specific identity file
+
+    rsync --rsync-path='sudo rsync' -e 'ssh -i key.pem' -r ec2-user@somehost:/etc/ ./backup/etc/
+
 ### Notes on options
 
     -ain # archive, itemize, dry-run
