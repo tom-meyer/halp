@@ -1,3 +1,8 @@
+
+### Directory name of script
+
+    SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 ### History expansion
 
 Whole line expansion:
@@ -25,10 +30,6 @@ Word expansion, when token after ! is not a number, is a shorthand for previous:
     
     $ echo one two three four five six
     $ echo !$ # == echo six
-
-### Directory name of script
-
-    SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ### Array expansion: [@] vs [*]
 
