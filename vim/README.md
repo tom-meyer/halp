@@ -4,6 +4,20 @@
     viwp # on second word
     viwp # on first word
 
+### Indentation-based folding
+
+    set foldmethod=indent
+    set foldnestmax=10
+    set foldenable # or use zi to toggle
+
+### Fold commands
+
+    za # toggle fold on current line
+    zi # toggle foldenable
+    zc # close fold on current line
+    zo # open fold on current line
+    zR # open all folds in the file
+
 ### Basic vimrc
 
     set hls ruler number list
