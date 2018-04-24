@@ -10,3 +10,6 @@
                                                                                      {"size": "9"},
                                                                                      {"size": "unknown"},
                                                                                      {"size": "5"}]}'
+### Use match()
+
+    jq '.[] | select(.RoleName | match("Jupyter"))' <<< '[{"RoleName": "JupyterDev"}, {"RoleName":"EC2Role"}]'
