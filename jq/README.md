@@ -1,3 +1,7 @@
+### String concatenation
+
+    jq -r '.[] | "Hello, \(.name)"' <<<'[{"name":"Tom"}]'
+
 ### Using select()
 
     # get Tom's size
