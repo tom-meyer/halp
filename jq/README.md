@@ -1,4 +1,4 @@
-### String concatenation
+### String interpolation
 
     jq -r '.[] | "Hello, \(.name)"' <<<'[{"name":"Tom"}]'
 
