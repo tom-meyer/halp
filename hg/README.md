@@ -6,6 +6,8 @@
     hg log -pl1 # ~ git show ('-p' is for patch)
     hg log -pr 256ec4f4 # ~ git show 256ec4f4
     hg heads # show branch heads
+    hg out # ~ git fetch && git log origin/master..
+    hg in  # ~ git fetch && git log ..origin/master
 
 ### Fetching and updating
 
@@ -16,4 +18,18 @@
 
 ### Repo/file operations
 
-    hg revert -C my/file.txt # ~ git checkout -- my/file.txt (without '-C' a backup file is created) 
+    hg commit -e # ~ git commit -v
+    hg revert -C my/file.txt # ~ git checkout -- my/file.txt (without '-C' a backup file is created)
+    hg rebase -s 103 -d tip # move a commit (rebase extension required. notable flags: --keep --collapse )
+    
+### Pushing
+
+    hg push default # mostly ok, but a branch can have multiple heads...
+    hg push -r 129:ec0a43a4 # be absolutely specific
+
+### Indispensable extensions
+
+* [Evolve](https://www.mercurial-scm.org/wiki/EvolveExtension)
+* [Rebase](https://www.mercurial-scm.org/wiki/RebaseExtension)
+* [Pager](https://www.mercurial-scm.org/wiki/PagerExtension)
+* [Color](https://www.mercurial-scm.org/wiki/ColorExtension)
