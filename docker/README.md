@@ -23,3 +23,8 @@ Abbreviated instructions from the offical documentation:
       # Go find out what version to use in the next line: https://github.com/docker/compose/releases
       curl -L https://github.com/docker/compose/releases/download/9.99.9/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
       curl http://localhost:15672/cli/rabbchmod +x /usr/local/bin/docker-compose
+
+### Tunnel the docker socket
+
+    ssh -L localhost:9999:/var/run/docker.sock mydockerhost.net -N &
+    DOCKER_HOST=localhost:9999 docker ps
