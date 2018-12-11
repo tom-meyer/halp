@@ -1,3 +1,15 @@
+### Module path
+
+With `inspect`:
+
+    import os
+    import inspect
+    inspect.getabsfile(os) # path of module
+    
+    inspect.getabsfile(inspect.currentframe()) # path for current code
+
+There is also the `__file__` attribute, but `inspect` is more reliable.
+
 ### Adding to module search path
 
 Given a python module at `/opt/mypy/mymod.py`
