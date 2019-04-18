@@ -13,3 +13,5 @@
 ### Shut up and keygen
 
     ssh-keygen -t rsa -b 4096 -C mykey -N '' -f ./my_id_rsa
+
+The above generates a key pair, see `openssl/README.md` for generating just a private key.
