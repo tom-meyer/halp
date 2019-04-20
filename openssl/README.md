@@ -20,6 +20,10 @@
 
     openssl genrsa -out private.pem
 
+### Extract public key from private
+
+    openssl rsa -in private.pem -pubout
+
 ### Generate self-signed cert
 
     openssl req -x509 -newkey rsa:4096 -keyout encrypted.pem -out cert.pem -days 365 # encrypted key is generated
