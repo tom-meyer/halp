@@ -22,7 +22,8 @@
 
 ### Extract public key from private
 
-    openssl rsa -in private.pem -pubout
+    openssl rsa -in private.pem -pubout # pem format
+    ssh-keygen -y -f private.pem > pub # ssh format
 
 ### Generate self-signed cert
 

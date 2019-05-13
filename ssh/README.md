@@ -16,6 +16,10 @@
 
 The above generates a key pair, see `openssl/README.md` for generating just a private key.
 
+### Extract public key from private
+
+    ssh-keygen -y -f private.pem > pub
+
 ### VPN
 
 From https://hackertarget.com/ssh-examples-tunnels/
