@@ -1,3 +1,12 @@
+### ftplugin (in favor of autocmd)
+
+Example for adjusting comment style for terraform files. Make a file
+with the name of the `filetype`, in this case `tf`:
+
+> ~/.vim/after/ftplugin/tf.vim
+
+    setlocal commentstring=#\ %s
+
 ### Swap words (http://vimcasts.org/transcripts/54/en/)
 
     yiw # on first word
