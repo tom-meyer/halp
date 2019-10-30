@@ -39,14 +39,13 @@ Word expansion, when token after ! is not a number, is a shorthand for previous:
 
 `${words[*]}` -> join all items with IFS and wrap in quotes
 
-To see how this works, use `ls`'s error output to see how the words were expanded:
+To see how this works, use `set -x` and `echo` to see how the parameters were parsed:
 
-    $ CMD=('foo bar' shazam)
-    $ ls "${CMD[@]}"
-    ls: cannot access foo bar: No such file or directory
-    ls: cannot access shazam: No such file or directory
-    $ ls "${CMD[*]}"
-    ls: cannot access foo bar shazam: No such file or directory
+    $ set -x
+    $ a=("1 one" "2 two")
+    $ echo ${a[@]} :: "${a[*]}" :: "${a[@]}"
+    + echo 1 one 2 two :: '1 one 2 two' :: '1 one' '2 two'
+    1 one 2 two :: 1 one 2 two :: 1 one 2 two
 
 ### History search
 
