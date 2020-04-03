@@ -3,6 +3,21 @@
 
     SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+### .bashrc & .bash_profile & .profile, oh my!
+
+* Just stick to .bashrc
+* Let distro manage .profile
+* Beware: RVM adds a .bash_profile which overrides .profile
+
+#### login shell (ssh or bash --login or sudo -i or GUI on a Mac)
+
+Runs first of: .bash_profile, .bash_login, .profile (read: **only** the first one
+is run). Generally one of those three will source .bashrc. 
+
+#### non-login (GUI on Ubuntu)
+
+Runs .bashrc
+
 ### History expansion
 
 Whole line expansion:
