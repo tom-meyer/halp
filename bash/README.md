@@ -9,14 +9,43 @@
 * Let distro manage .profile
 * Beware: RVM adds a .bash_profile which overrides .profile
 
-#### login shell (ssh or bash --login or sudo -i or GUI on a Mac)
+##### login shell (ssh or bash --login or sudo -i or GUI on a Mac)
 
 Runs first of: .bash_profile, .bash_login, .profile (read: **only** the first one
 is run). Generally one of those three will source .bashrc. 
 
-#### non-login (GUI on Ubuntu)
+##### non-login (GUI on Ubuntu)
 
 Runs .bashrc
+
+### Parameter expansion
+
+http://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion-1
+
+##### unset or null
+
+* ${parameter:-word} substitute if unset
+* ${parameter:=word} assign if unset
+* ${parameter:?err msg} print err msg if unset
+* ${parameter:+word} substitute nothing if unset. handy for optional separator: "$p${r:+-}$r"
+
+##### arrays
+
+* ${!name[@]} keys of array
+* ${#parameter} length of array
+* ${name[@]} and ${name[*]} (see below)
+
+##### strings
+
+* ${parameter:offset:length} *Substring Expansion*. length is optional. offset can be negative (but a space is required, eg ' -1' not '-1')
+* ${parameter/pattern/string} replace pattern
+* ${parameter##prefix} delete prefix
+* ${parameter##suffix} delete suffix
+
+##### black magic
+
+* ${!word} indirect variable expansion
+* ${parameter@operator} Q and E useful for quoting and escaping
 
 ### History expansion
 
