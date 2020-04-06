@@ -37,10 +37,11 @@ http://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-
 
 ##### strings
 
-* ${parameter:offset:length} *Substring Expansion*. length is optional. offset can be negative (but a space is required, eg ' -1' not '-1')
+* ${parameter:offset:length} *Substring Expansion*. length is optional. offset can be
+  negative (but a space before colon is required, eg ` -1` not `-1`)
 * ${parameter/pattern/string} replace pattern
-* ${parameter##prefix} delete prefix
-* ${parameter##suffix} delete suffix
+* ${parameter##prefix} delete prefix (use one `#` for non-greedy)
+* ${parameter%%suffix} delete suffix (use one `%` for non-greedy)
 
 ##### black magic
 
@@ -83,13 +84,12 @@ Word expansion, when token after ! is not a number, is a shorthand for previous:
 
 `${words[*]}` -> join all items with IFS and wrap in quotes
 
-To see how this works, use `set -x` and `echo` to see how the parameters were parsed:
+To see how this works, use `set -x` and noop (`:`) to see how the parameters were parsed:
 
     $ set -x
     $ a=("1 one" "2 two")
-    $ echo ${a[@]} :: "${a[*]}" :: "${a[@]}"
-    + echo 1 one 2 two :: '1 one 2 two' :: '1 one' '2 two'
-    1 one 2 two :: 1 one 2 two :: 1 one 2 two
+    $ : ${a[@]} :: "${a[*]}" :: "${a[@]}"
+    + : 1 one 2 two :: '1 one 2 two' :: '1 one' '2 two'
 
 ### History search
 
