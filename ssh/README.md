@@ -1,3 +1,7 @@
+### Clone with key
+
+    git clone -c 'core.sshcommand = ssh -i ~/dots/ssh/id_rsa_github -o IdentitiesOnly=yes' git@github.com:tom-meyer/halp.git
+
 ### Escape sequences
 
     ~.   # kill connection
