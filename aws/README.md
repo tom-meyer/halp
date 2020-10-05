@@ -35,6 +35,16 @@ From [Restricting Access to Amazon S3 Content][2]
 > the bucket policy that you created for your OAI not evaluated for those
 > files. In that case, use object ACLs to give permissions to your OAI.
 
+However, cross-account object ownership can now be managed with a new feature:
+
+> You can now use a new per-bucket setting to enforce uniform object ownership
+> within a bucket. This will simplify many applications, and will obviate the 
+> need for the Lambda-powered self-COPY that has become a popular way to do this
+> up until now. Because this setting changes the behavior seen by the account
+> that is uploading, the PUT request must include the `bucket-owner-full-control`
+> ACL. You can also choose to use a bucket policy that requires the inclusion of
+> this ACL.
+
 Verify keypair fingerprint
 --------------------------
 
@@ -48,3 +58,4 @@ Geez, why so complicated?
 
 [1]: https://aws.amazon.com/blogs/security/iam-policies-and-bucket-policies-and-acls-oh-my-controlling-access-to-s3-resources/
 [2]: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#private-content-granting-permissions-to-oai
+[3]: https://aws.amazon.com/blogs/aws/amazon-s3-update-three-new-security-access-control-features/
