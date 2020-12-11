@@ -61,6 +61,9 @@ with the name of the `filetype`, in this case `tf`:
     Plugin 'elzr/vim-json'
     Plugin 'fatih/vim-hclfmt'
     Plugin 'flazz/vim-colorschemes'
+    Plugin 'vim-syntastic/syntastic'
+    Plugin 'Vimjas/vim-python-pep8-indent'
+    Plugin 'pangloss/vim-javascript'
 
     call vundle#end()            " required
     filetype plugin indent on    " required
