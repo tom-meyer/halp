@@ -75,6 +75,7 @@ with the name of the `filetype`, in this case `tf`:
     set modeline
     set t_Co=256
     colorscheme molokai
+    hi MatchParen term=bold cterm=bold ctermfg=69 ctermbg=233 gui=bold guifg=#000000 guibg=#FD971F
 
 ### Vim motions
 
