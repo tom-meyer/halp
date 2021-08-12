@@ -4,6 +4,7 @@
     set -g mouse on
     set-window-option -g window-status-current-bg red
     bind-key C-a last-window
+    set-option -g allow-rename off
 
 ### Commands
 
