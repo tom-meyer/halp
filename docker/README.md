@@ -1,3 +1,9 @@
+### Show available format names for any command
+
+Print each line as json, and look at the keys:
+
+      docker images --format='{{json .}}'
+
 ### Dockerfile apt-get
 
 https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run
