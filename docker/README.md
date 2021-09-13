@@ -11,7 +11,28 @@ https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run
       RUN apt-get update && apt-get install -y \
           curl \
        && rm -rf /var/lib/apt/lists/*
- 
+
+### Plugins miscellanea
+
+* A plugin is a containerized driver binary that communicates with the docker daemon via a driver protocol through a unix socket
+* Docker volume driver protocol: https://docs.docker.com/engine/extend/plugins_volume/#volume-plugin-protocol
+* `curl` can be used to speak the protocol, see https://docs.docker.com/engine/extend/#debugging-plugins
+* `docker plugin enable PLUGIN` creates the actual container and runs the driver binary
+* A good example of a volume driver: https://github.com/vieux/docker-volume-sshfs
+* Example commands below use `/usr/bin/runc` excutable, but on amazon linux the binary is called `docker-runc`.
+
+List plugin containers:
+
+      sudo runc --root /run/docker/runtime-runc/plugins.moby list
+
+Get a shell within a conatainer:
+
+      sudo runc --root /run/docker/runtime-runc/plugins.moby exec -t 1d512ea36285f9ab86f526aa76d1d11d0a1c6e4ea976b2e4e6e85a5b0f2c664d sh
+
+See plugin stdout and stderr in the docker daemon logs:
+
+      journalctl -n 10 -fu docker.service
+
 ### Ubuntu setup
 
 Abbreviated instructions from the offical documentation:
