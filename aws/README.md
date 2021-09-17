@@ -1,3 +1,14 @@
+Lambda Layer (python)
+---------------------
+
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install --upgrade pip
+    mkdir python
+    pip install --target python -r requirements.txt
+    zip -r layer-3.8.zip python
+
+
 Bucket policies madness
 -----------------------
 
