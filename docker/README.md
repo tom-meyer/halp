@@ -1,8 +1,20 @@
-### Show available format names for any command
+### --format=???
 
-Print each line as json, and look at the keys:
+Print available keys:
 
-      docker images --format='{{json .}}'
+    docker images --format='{{json .}}'
+    
+Alternatively, some man pages documents the keys:
+
+    man docker-volume-ls
+
+### --filter=???
+
+The --help output doesn't include the available filters. Man pages do though (mostly)!
+
+    man docker-plugin-ls
+    man docker-images   # no filters mentioned here
+    man docker-image-ls # filters documented (I guess since this is prefered over `docker images`) 
 
 ### Dockerfile apt-get
 
