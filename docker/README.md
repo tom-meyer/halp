@@ -24,6 +24,11 @@ https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run
           curl \
        && rm -rf /var/lib/apt/lists/*
 
+### Post-install things
+
+    sudo systemctl enable docker  # yum on amazonlinux doesn't do this
+    sudo usermod -aG docker ec2-user
+
 ### Plugins miscellanea
 
 * A plugin is a containerized driver binary that communicates with the docker daemon via a driver protocol through a unix socket
