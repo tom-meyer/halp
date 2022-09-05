@@ -44,4 +44,21 @@ To use with syntastic, just enable it:
 
     let g:syntastic_python_checkers=['mypy']
 
+### system exec
+
+    import os
+    import shutil
+    
+    ssh_bin = shutil.which('ssh')
+    os.execl(
+        ssh_bin, # executable
+        ssh_bin, # argv[0]
+        '-i', key_file,
+        '-o', 'StrictHostKeyChecking=no',
+        '-o', 'UserKnownHostsFile=/dev/null',
+        '-o', 'HashKnownHosts=no',
+        *dst_args,
+        *ssh_args,
+    )
+    
 [1]: https://github.com/python/mypy
