@@ -1,3 +1,13 @@
+### Persistant interactive container
+
+    docker create -it --dns 1.1.1.1 --name playground bash
+    docker start -ai playground
+
+Notes:
+- The `-it` argument for docker create is super important. Without it, there is no docker start invocation that will attach to the container.
+- If volumes are needed, add `-v ...` on the docker create
+- Some images might need a resonable entry point, eg `--entrypoint /bin/bash`
+
 ### --format=???
 
 Print available keys:
