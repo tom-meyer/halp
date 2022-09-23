@@ -17,3 +17,9 @@
 ### Use match()
 
     jq '.[] | select(.RoleName | match("Jupyter"))' <<< '[{"RoleName": "JupyterDev"}, {"RoleName":"EC2Role"}]'
+
+### Sorting
+
+    jq sort <<< '[2,3,1]'
+    jq '[.[] | .id] | sort' <<< '[{"id":3}, {"id":1}, {"id":2}]'
+    jq 'sort_by(.foo)' <<< '[{"foo":4, "bar":10}, {"foo":3, "bar":100}, {"foo":2, "bar":1}]'
