@@ -1,3 +1,22 @@
+### Resize XFS
+
+Check stuff:
+
+    sudo lsblk
+    df -hT /
+
+To resize a filesystem on a partition, grow the partition before resizing:
+
+    sudo growpart /dev/nvme0n1 1
+    sudo xfs_growfs -d /
+
+To resize a filesystem on an entire device (eg nvme1n1):
+
+    sudo xfs_growfs -d /mnt/bigdisk
+
+See [AWS guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html) for more info.
+
+
 ### check swap
 
     swapon -s
