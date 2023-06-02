@@ -27,3 +27,10 @@ See [AWS guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-ex
     chmod 600 /swapfile
     mkswap /swapfile
     swapon /swapfile
+
+### Check for deep sleep support
+
+    $ cat /sys/power/mem_sleep 
+    s2idle [deep]
+
+The thing in brackets is the mode that is enabled. If `deep` isn't present, the kernel doesn't support deep sleep.
