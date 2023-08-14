@@ -33,6 +33,18 @@ https://docs.python.org/3/library/argparse.html
     parser.add_argument('files', nargs=2)  # 'files' will be a list, even with nargs=1
     parser.add_argument('files', nargs=argparse.REMAINDER)
 
+### collect multiple values
+
+To collect a list of values with the same argment name, e.g.:
+
+    mycmd -n 1 -n 2 -n 55
+
+Use `action='append'`
+
+    parser.add_argument('-n', action='append')
+
+Note that the value will be a list of one if a single flag is used, and `None` if no flags are used.
+    
 ### nice help messages
 
     https://docs.python.org/3/library/argparse.html#argumentparser-objects
