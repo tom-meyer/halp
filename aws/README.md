@@ -1,3 +1,13 @@
+curl SigV4
+----------
+
+    curl -vv \
+         --aws-sigv4 "aws:amz:us-east-1:sts" \
+         --user "$(aws --profile archivist configure get aws_access_key_id):$(aws --profile archivist configure get aws_secret_access_key)" \
+         --data 'Action=GetCallerIdentity&Version=2011-06-15' \
+         https://sts.amazonaws.com/
+
+
 Lambda Layer (python)
 ---------------------
 
