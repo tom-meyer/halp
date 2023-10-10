@@ -1,3 +1,22 @@
+### Logging miscellanea
+
+See how big the log is for a container:
+
+    docker inspect --format='{{.LogPath}}' nethermind
+
+Limit the size and do log rotation for a container:
+
+    docker run --log-driver json-file --log-opt max-size=10m alpine echo derp
+
+`json-file` is the default log driver but max-size is -1 by default. Details [here](https://docs.docker.com/config/containers/logging/json-file/). Note there are all sorts of log drivers.
+
+
+### Good pattern for long running containers
+
+* Use `--log-opt` for controlling size and rotation.
+* Use `--restart always` to keep the container up across daemon or system restarts.
+
+
 ### Persistant interactive container
 
     docker create -it --dns 1.1.1.1 --name playground bash
