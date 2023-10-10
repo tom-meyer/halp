@@ -1,3 +1,12 @@
+### Charge threshold
+
+This works fine on my Ubuntu laptops:
+
+    echo -n 85 > /sys/class/power_supply/BAT0/charge_control_end_threshold
+
+But I get a "write error" on Fedora. It seems [TLP](https://linrunner.de/tlp/) is needed but it conflicts with `power-profiles-daemon`. Need to do more research.
+
+
 ### Resize XFS
 
 Check stuff:
