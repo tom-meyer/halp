@@ -1,10 +1,12 @@
 ### Charge threshold
 
-This works fine on my Ubuntu laptops:
+Set the upper limit:
 
     echo -n 85 > /sys/class/power_supply/BAT0/charge_control_end_threshold
 
-But I get a "write error" on Fedora. It seems [TLP](https://linrunner.de/tlp/) is needed but it conflicts with `power-profiles-daemon`. Need to do more research.
+On my Fedora machine, I kept getting "write error" with the above command, and
+it turned the error was due to the current charge level being above what I was
+trying to set.
 
 
 ### Users
