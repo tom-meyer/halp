@@ -7,6 +7,34 @@ This works fine on my Ubuntu laptops:
 But I get a "write error" on Fedora. It seems [TLP](https://linrunner.de/tlp/) is needed but it conflicts with `power-profiles-daemon`. Need to do more research.
 
 
+### Users
+
+    adduser # use this. helpful promts for a human
+    useradd # low level for scripts and such
+
+
+### Groups
+
+    sudo usermod -aG lxd tom # add to group
+    newgrp - lxd # spawn a new bash shell with group change applied
+
+
+### iptables
+
+    iptables -L -n -v
+
+Maybe create a iptables README?
+
+    iptables -I <chain> # insert rule at start of chain
+    iptables -A <chain> # insert rule at end of chain
+
+
+### Inspecting open ports
+
+    netstat -nltp
+    lsof -nPp <PID> | grep LISTEN # by pid (can be multiple pids separated by commas)
+
+
 ### Resize XFS
 
 Check stuff:
