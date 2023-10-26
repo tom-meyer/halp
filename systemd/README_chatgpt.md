@@ -33,6 +33,10 @@ Using systemd to manage Docker containers involves some considerations when dete
 
 Regardless of the approach you choose, ensure that your systemd service file specifies the correct dependencies (like `Requires=docker.service` and `After=docker.service`) and uses appropriate options (like `Restart=always`) to make the service resilient and behave as expected.
 
+--------------
+
+I ask:
+
 > If the command specified in ExecStart exits with code 0, does systemd assume the service has started?
 
 Not necessarily. The behavior of systemd in response to an exit code from the `ExecStart` command is influenced by the `Type=` directive in the service file. Here's a summary of how systemd interprets the start status based on the `Type=` directive:
