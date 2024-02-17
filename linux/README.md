@@ -73,3 +73,8 @@ See [AWS guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-ex
     s2idle [deep]
 
 The thing in brackets is the mode that is enabled. If `deep` isn't present, the kernel doesn't support deep sleep.
+
+
+### Miscelanea
+
+    sudo dmidecode -s system-serial-number  # print the serial number (works on my ThinkPad, not sure how universal this is)
