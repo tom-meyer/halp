@@ -21,9 +21,21 @@ https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
     pd.Series(None, dtype='string', index=range(len(df)))
 
 
-### Misc
+### Access
 
-    pd.read_csv(r['Body'], index_col=False, dtype='string')
+    # by column
+    df['First Name']
+    df.Address  # or dot notation for single-word column name
+
+    # by row
+    df.iloc[0]
+    df.iloc['tom']  # by label if index
+
+
+### CSV
+
+    df = pd.read_csv('path/to/file.csv', index_col=False, dtype='string')
+    pd.to_csv('path/to/file.csv', index=False)
 
 
 ### For text data use dtype `'string'` not `str`
