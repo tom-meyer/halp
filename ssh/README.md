@@ -24,6 +24,17 @@ The above generates a key pair, see `openssl/README.md` for generating just a pr
 
     ssh-keygen -y -f private.pem > pub
 
+
+### Print fingerprint
+
+This prints a fingerprint that matches what is shown in my GitHub profile:
+
+    ssh-keygen -lf /home/tom/dots/ssh/id_rsa_github_tom-meyer.pub
+
+Note: the fingerprint shown in the AWS console for a EC2 keypair is not this
+fingerprint. To find that fingerprint, head over to the [AWS README](aws/README.md).
+
+
 ### VPN
 
 From https://hackertarget.com/ssh-examples-tunnels/
