@@ -23,3 +23,8 @@
     web.json_response(data, status=404)
 
     web.Response(text="Forbidden", status=403, content_type='text/plain')
+
+    response = web.HTTPFound(location='/')
+    raise response
+
+    web.Response(status=200, headers={'HX-Redirect': new_location})
