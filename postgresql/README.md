@@ -1,3 +1,18 @@
+### Active connections
+
+Active connections are available to query in `pg_stat_activity`.
+
+    SELECT pid, usename, datname, client_addr, state, query FROM pg_stat_activity;
+    \dS pg_stat_activity
+
+Having a bunch of idle connections is generally not bad. Issues arise when
+multiple concurrent queries are going on.
+
+Kill a connection with:
+
+    SELECT pg_terminate_backend(12345); -- use the pid from the pg_stat_activity table
+
+
 ### Misc PSQL commands
 
 Set namespace:
