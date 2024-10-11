@@ -12,6 +12,12 @@ Kill a connection with:
 
     SELECT pg_terminate_backend(12345); -- use the pid from the pg_stat_activity table
 
+### Max connections
+
+    SHOW max_connections;
+
+RDS instances set max_connections based on the instance class memory, specifically: `LEAST({DBInstanceClassMemory/9531392},5000)`
+
 
 ### Misc PSQL commands
 
