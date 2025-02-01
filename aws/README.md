@@ -1,3 +1,13 @@
+Get credentials
+---------------
+
+    # uses AWS_* env vars
+    aws configure get aws_access_key_id
+
+    # explicit profile
+    aws --profile ro-user configure get aws_secret_access_key
+
+
 curl SigV4
 ----------
 
