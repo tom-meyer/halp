@@ -8,8 +8,20 @@ curl SigV4
          https://sts.amazonaws.com/
 
 
-Lambda Layer (python)
----------------------
+Get session token
+-----------------
+
+Useful for generating temporary credentials for scripts.
+
+    eval "$(
+        aws sts get-session-token \
+        --query 'Credentials.[join(`\n`, [join(`=`, [`export AWS_ACCESS_KEY_ID`,AccessKeyId]), join(`=`, [`export AWS_SECRET_ACCESS_KEY`,SecretAccessKey]), join(`=`, [`export AWS_SESSION_TOKEN`,SessionToken])])]' \
+        --output text
+    )"
+
+
+Create a Lambda Layer (python)
+-------------------------------
 
     python3 -m venv venv
     source venv/bin/activate
