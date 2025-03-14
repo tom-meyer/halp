@@ -18,6 +18,14 @@ curl SigV4
          https://sts.amazonaws.com/
 
 
+Get Caller Identity with curl
+------------------------------
+
+Only works on an ec2 with an IAM role attached, obviously.
+
+    curl http://169.254.169.254/latest/meta-data/iam/info
+
+
 Get session token
 -----------------
 
