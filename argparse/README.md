@@ -17,7 +17,7 @@ https://docs.python.org/3/library/argparse.html
     subparser = cmds.add_parser('foo')
     subparser.set_defaults(Run=lambda _: run_foo_cmd())
     
-    subparser = subcmds.add_parser('bar')
+    subparser = cmds.add_parser('bar')
     subparser.set_defaults(Run=lambda _: run_bar_cmd())
     
     args = parser.parse_args()
