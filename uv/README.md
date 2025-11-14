@@ -35,3 +35,10 @@ The uvx command invokes a tool without installing it.
 Actually install a tool:
 
     uv tool install ruff
+
+## uv run
+
+By default, `uv run` tries hard to discover a project, but sometimes isolation is desired
+even when a project is present. A handly invocation for isolated ad-hoc environment:
+
+    uv run ---isolated -no-project --with pyjwt,boto3 --directory ~/projects/auth python3
