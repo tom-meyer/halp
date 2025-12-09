@@ -2,6 +2,15 @@
 
     git clone -c 'core.sshcommand = ssh -i ~/dots/ssh/id_rsa_github -o IdentitiesOnly=yes' git@github.com:tom-meyer/halp.git
 
+### Split/edit previous commit
+
+    git rebase -i  # start an interactive rebase
+    (in vim, choose `edit` for the commit)
+    git reset HEAD^  # do a "--mixed" reset (Keeps working dir, wipes staging area, thus undoing the commit)
+    vim ... / git add ... / git commit -m ... # edit, add, commit, repeat
+    git reset --continue
+
+
 ### Basic config (~/.gitconfig)
 
     [color]
