@@ -5,7 +5,13 @@
 
 ### Directory name of script
 
-    SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+### Portable shebang
+
+MacOSX is weird, so use this that works everywhere:
+
+    #!/usr/bin/env bash
 
 ### .bashrc & .bash_profile & .profile, oh my!
 
