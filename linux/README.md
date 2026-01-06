@@ -21,6 +21,12 @@ trying to set.
     newgrp - lxd # spawn a new bash shell with group change applied
 
 
+### Show IP addresses
+
+    ip -c -br addr
+    hostname -I
+
+
 ### iptables
 
     iptables -L -n -v
