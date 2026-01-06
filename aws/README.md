@@ -26,6 +26,15 @@ Only works on an ec2 with an IAM role attached, obviously.
     curl http://169.254.169.254/latest/meta-data/iam/info
 
 
+Get temporary credentials
+-------------------------
+
+Export credentials
+
+    aws configure export-credentials --format env # includes `export` keyword, good for bash scripts
+    aws configure export-credentials --format env-no-export # bare, good for docker env file
+
+
 Get session token
 -----------------
 
