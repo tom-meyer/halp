@@ -28,6 +28,21 @@ is run). Generally one of those three will source .bashrc.
 
 Runs .bashrc
 
+### Shell quoting a command
+
+Use printf to shell quote:
+
+    cmd_opts=( ... )
+    long_command=$(printf ' %q' "${cmd_opts[@]}")
+    docker run --rm alpine sh -c "$ssm_command"
+
+Helpful to debug:
+
+    $ printf '%s\n' foo baz\ bar '"derp"'
+    foo
+    baz bar
+    "derp"
+
 ### Parameter expansion
 
 http://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion-1
