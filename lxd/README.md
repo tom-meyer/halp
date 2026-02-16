@@ -26,3 +26,14 @@ Install from source
 -------------------
 
 TODO
+
+
+LXC vs LXD
+----------
+
+LXC is the low-level engine.
+
+LXD is the modern manager built on top of LXC.
+
+Confusingly, the `lxc` executable is used for the lxd framework (while
+the older lxc commands look like `lxc-BLAH`.
