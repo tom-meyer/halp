@@ -1,6 +1,6 @@
 **NOPE** 
 
-You want [lxd](lxd/README.md).
+You want [lxd](/lxd/README.md).
 
 LXC is the low-level engine.
 
