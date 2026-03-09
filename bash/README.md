@@ -1,3 +1,15 @@
+### Append history
+
+For this to work right, `shopt -s histappend` should be set (typically already set in distro's .bashrc)
+
+    history -a
+
+Save on every command:
+
+    PROMPT_COMMAND='history -a'
+
+Sometimes `history -a; history -n` might be useful, which reads in new history lines after appending. This
+makes all shells essentially have the same history (no isolation).
 
 ### Expand globs and variables
 
